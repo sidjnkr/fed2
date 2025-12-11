@@ -1,0 +1,708 @@
+:root {
+  /* laat browser weten dat beide worden ondersteunt */
+  color-scheme: light dark;
+
+  /* kleuren met ligt dark */
+  --color-bg:          light-dark(#ffffff, #050608);
+  --color-text:        light-dark(#111111, #f5f5f5);
+  --color-surface:     light-dark(#ffffff, #14161a);
+  --color-surface-alt: light-dark(#f7f7f7, #1d2228);
+  --color-border:      light-dark(#e5e5e5, #333843);
+
+  --color-accent:      light-dark(#eb3467, #ff4c7d);
+  --color-accent-alt:  light-dark(#007f86, #32c1c7);
+
+  --color-link:        light-dark(#007f86, #7ee7ff);
+  --color-link-hover:  light-dark(#eb3467, #ff9ac0);
+}
+
+/* als de radio 'licht' is aangevinkt dan word de lught mode geforceerd*/
+:root:has([name="theme"][value="light"]:checked) {
+  color-scheme: light;
+}
+
+/* als de radio 'donker' is aangevinkt dan word de dark mode geforceerd */
+:root:has([name="theme"][value="dark"]:checked) {
+  color-scheme: dark;
+}
+
+/* styling van de switcher  */
+/* Het formulier in de navigatie */
+nav > form {
+  margin-left: auto;             /* schuift helemaal naar rechts */
+  font-size: 0.8rem;
+}
+
+/* fieldset baseline */
+nav > form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Elk label is een "pill button" */
+nav > form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  line-height: 1;
+}
+
+/* de radio-knoppen zelf */
+nav > form input[type="radio"] {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0;
+  accent-color: var(--color-accent-alt);
+}
+
+/* wanneer een radio checked is → stijl het label eromheen */
+nav > form label:has(input:checked) {
+  background-color: var(--color-accent-alt);
+  color: var(--color-bg);
+  font-weight: 600;
+}
+
+/* duidelijke keyboard focus */
+nav > form input[type="radio"]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+
+
+/* stying styling */
+
+main > article:nth-of-type(1) > section:nth-of-type(1) {
+  position: relative;       
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-top: 0;
+}
+main > article:nth-of-type(1) > section:nth-of-type(1) > img {
+  width: 100%;
+  height: 420px;
+  display: block;
+} 
+/* tekst over de foto plaatsen */
+main > article:nth-of-type(1) > section:nth-of-type(1) > p,
+main > article:nth-of-type(1) > section:nth-of-type(1) > h3,
+main > article:nth-of-type(1) > section:nth-of-type(1) > a {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+  text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+}
+main > article:nth-of-type(1) > section:nth-of-type(1) > p {
+  top: 35%;
+  font-weight: 750;
+  font-size: 1.1rem;
+}
+/* titel in het midden */
+main > article:nth-of-type(1) > section:nth-of-type(1) > h3 {
+  top: 45%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  width: 80%;
+}
+/* knop onderaan */
+main > article:nth-of-type(1) > section:nth-of-type(1) > a {
+  top: 60%;
+  padding: 0.5rem 1.2rem;
+  padding-top: 3rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+/* nu en straks op tv */
+main > article > section:nth-of-type(2) {
+  padding: 1.5rem;
+  background-color: var(--color-surface);
+  border-radius: 1.5rem;
+}
+main > article > section:nth-of-type(2) > a > img{
+  width: 100%;
+  height: 110px;
+  display: block;
+  border-radius: 1rem;
+}
+main > article > section:nth-of-type(2) > p{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+main > article > section:nth-of-type(2) > p  span {
+  font-size: 0.8rem;
+  font-weight: 6  00;
+}
+main > article > section:nth-of-type(2) a:nth-of-type(2) {
+  margin-top: 1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 3.5px 0 0;
+}
+
+main > article > section:nth-of-type(3) {
+  background-color: var(--color-surface-alt);
+  border-radius: 200px;
+  padding: 2rem;
+}
+main > article > section:nth-of-type(3) > h2 {
+  font-size: 30px;
+  color: var(--color-text);
+margin-left: 1.5rem;
+}
+main > article > section:nth-of-type(3) > p {
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  color: var(--color-text)
+}
+main > article > section:nth-of-type(3) > a {
+  margin-top: 1rem;
+  color: var(--color-accent-alt);
+  font-weight: 750;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 1.5rem;
+}
+
+
+main > article > img {
+  margin-left: 12.5rem;
+}
+
+/* populaire food artikelen */
+
+main > aside:nth-of-type(1) {
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+}
+main > aside:first-of-type > h2 {
+  text-align: center;
+  font-weight: 620;
+}
+main > aside:nth-of-type(1) ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+main > aside:nth-of-type(1) ul li {
+  background-color: var(--color-surface);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 20rem;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+main > aside:nth-of-type(1) ul li > a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+main > aside:nth-of-type(1) ul li > a > section {
+  display: flex;
+  flex-direction: column;
+}
+main > aside:nth-of-type(1) ul li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  order: -1;          
+}
+main > aside:nth-of-type(1) ul li > a > section > p {
+  order: -1;
+  color: var(--color-accent-alt);
+  font-size: 16px;
+  font-weight: 750;
+  padding-left: 8px;
+}
+main > aside:nth-of-type(1) ul li > a > section > h3 {
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 8px;
+  padding-top: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+main > aside:nth-of-type(1) > button {
+  background-color: var(--color-accent);
+  gap: .7rem;
+  border-radius: 25px;
+  border: 0;
+  margin: 30px 0 0;
+  display: inline-block;
+  height: 40px;
+} 
+main > aside:nth-of-type(1) > button span {
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+}
+
+
+/* ook lekker sectie */
+main > aside:nth-of-type(2) {
+  padding: 1.5rem 1rem 2rem;
+  background: linear-gradient(var(--color-surface-alt), var(--color-surface));
+}
+/* ook lekker // populaire recepten */
+main > aside:nth-of-type(2) > h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+main > aside:nth-of-type(2) > ul > li {
+  position: relative;        
+  background-color: var(--color-surface);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 80%;                
+  padding-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+main > aside:nth-of-type(2) > ul > li > img {
+  order: -1;          
+  width: 100%;
+  display: block;
+  border-radius: 1.2rem 1.2rem 0 0; 
+  max-height: 180px;
+  object-fit: cover;
+}
+main > aside:nth-of-type(2) > ul > li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem;
+}
+main > aside:nth-of-type(2) > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+main > aside:nth-of-type(2) > ul > li > button {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  padding: .5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* hartje */
+main > aside:nth-of-type(2) > ul > li > button svg {
+  width: 18px;
+  height: 18px;
+  fill: #ff3b6b; 
+}
+main > aside:nth-of-type(2) li > div > p:nth-of-type(1) {
+  font-size: 0;
+  display: flex;
+  justify-content: space-between;
+}
+main > aside:nth-of-type(2) li > div > p:nth-of-type(1)::before {
+  content: "10 min";
+  font-size: .9rem;
+  color: #1aa96b; 
+}
+main > aside:nth-of-type(2) li > div > p:nth-of-type(1)::after {
+  content: "★ 3,1";
+  font-size: .9rem;
+  color: gold;
+}
+
+/* recept naam */
+main > aside:nth-of-type(2) > ul > li > div h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+main > aside:nth-of-type(2) > ul > li > div h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+/* rudolp van veen foto */
+main > aside:nth-of-type(2) > ul > li > div > img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: .25rem;
+  margin-right: .4rem;
+  vertical-align: middle;
+}
+/* rudolp van veen foto */
+main > aside:nth-of-type(2) > ul > li > div > img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: .25rem;
+  margin-right: .4rem;
+  vertical-align: middle;
+}
+main > aside:nth-of-type(2) li > div > p:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+/* foto rudolph van veen */
+main > aside:nth-of-type(2) > ul > li > div > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  position: absolute;
+  left: 1.25rem;     
+  bottom: 1rem;       
+}
+
+main > aside:nth-of-type(2) > ul > li > div > p:last-of-type {
+  font-size: .8rem;
+  color: var(--color-text);
+  margin: 0;
+  margin-left: 3.25rem;   
+  margin-top: 1.25rem;   
+}
+
+main > aside:nth-of-type(2) > ul > li > div > p:last-of-type > span {
+  color: var(--color-accent-alt);        
+  font-weight: 600;
+}
+/* carousel maken voor de ook lekker sectie */
+main > aside:nth-of-type(2) > ul {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+main > aside:nth-of-type(2) > ul > li {
+  display: block;
+  flex: 0 0 100%;
+  max-width: none;
+  background-color: var(--color-surface);
+  scroll-snap-align: center;
+}
+/* layout van de receptkaartjes ff overschrijven */
+main > aside:nth-of-type(2) > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+main > aside:nth-of-type(2) > ul > li {
+  position: relative;
+  background-color: var(--color-surface);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+
+  flex: 0 0 100%;         
+  scroll-snap-align: center;
+}
+
+/* grote gerecht-foto bovenaan */
+main > aside:nth-of-type(2) > ul > li > img {
+  order: -1;
+  width: 100%;
+  display: block;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+/* tekstblok binnen de kaart */
+main > aside:nth-of-type(2) > ul > li > div {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding: 1rem 1.25rem 1.75rem;
+}
+
+/* hartje rechtsboven */
+main > aside:nth-of-type(2) > ul > li > button {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  padding: .5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+main > aside:nth-of-type(2) > ul > li > button svg {
+  width: 18px;
+  height: 18px;
+  fill: #ff3b6b;
+}
+/* knoppen toevoegen */
+main > aside:nth-of-type(2) > ul > li > button:nth-of-type(2) {
+  position: absolute;
+  right: 1rem;
+  top: 37%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  font-size: 2rem;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+/* pijltje terug */
+main > aside:nth-of-type(2) > ul > li > button:nth-of-type(3) {
+  position: absolute;
+  left: 1rem;
+  top: 37%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  font-size: 2rem;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+/* carousel bolletjes */
+main > aside:nth-of-type(2) > .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+main > aside:nth-of-type(2) > .carousel-dots span {
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  background: #d0d0d0;
+  display: block;
+}
+
+main > aside:nth-of-type(2) > .carousel-dots span.active {
+  background: #00a05c; 
+}
+/* responsive maken */
+
+@media (min-width: 768px) {
+  /* we maken van het hele article een grid verdeeld in 2 kolommen */
+  main > article {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    align-items: start;
+  }
+  /* soep-blok blijft over de hele breedte bovenaan */
+  main > article > section:nth-of-type(1) {
+    grid-column: 1 / -1;
+  }
+   main > article:nth-of-type(1) > section:nth-of-type(1) > a {
+    text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+   }
+    main > article:nth-of-type(1) > section:nth-of-type(1) > h3{
+    text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+    }
+    main > article:nth-of-type(1) > section:nth-of-type(1) > p {
+    text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+    }
+  /* nu en straks op tv links */
+  main > article > section:nth-of-type(2) { 
+    grid-column: 1 / 2;
+    font-weight: bold;
+    width: 75%;       
+    border-radius: 1rem; 
+    margin: 0 auto;   
+    display: block;
+    
+  }
+    /* weekmenu en de saladefoto rechts */
+  main > article > section:nth-of-type(3),
+  main > article > img {
+    grid-column: 2 / 3;
+  }
+   /* saladefoto */
+  main > article > img {
+    margin-left: 10rem;
+    width: 155px;
+    height: auto;
+    display: block;
+    z-index: 1;
+  }
+  /* ovaal achtergrondje geven met een licht kleurtje */
+  main > article > section:nth-of-type(3) {
+    position: relative;
+    padding: 2.5rem 2.5rem 3.5rem;
+    z-index: 1;
+  }
+  main > article > section:nth-of-type(3)::before {
+    content: "";
+    position: absolute;
+    inset: -2rem -3rem -3rem -1rem;
+    border-radius: 999px;
+    background-color: var(--color-surface-alt);
+    z-index: -1;
+  }
+
+  /* populaire foodartikelen 2 kolommen vanaf 768px */
+  main > aside:nth-of-type(1) ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1.5rem;
+  }
+  main > aside:nth-of-type(1) ul li {
+    max-width: none;
+    margin: 0;
+  }
+  /* populaire recepten */
+    main > aside:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1.5rem;
+  }
+  main > aside:nth-of-type(2) ul li {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  /* volgende/vorige buttons uitschakelen */
+  main > aside:nth-of-type(2) ul li button:nth-of-type(2),
+  main > aside:nth-of-type(2) ul li button:nth-of-type(3) {
+    display: none;
+  }
+  main > aside:nth-of-type(2) > .carousel-dots {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px){
+    main > article:nth-of-type(1) > section:nth-of-type(1) > img {
+    height: 520px;             
+    object-fit: cover;          
+  }
+    main > article:nth-of-type(1) > section:nth-of-type(1) > p {
+    top: 32%;
+    font-size: 1.2rem;
+    text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+  }
+    main > article:nth-of-type(1) > section:nth-of-type(1) > h3 {
+    top: 45%;
+    font-size: 2.4rem;
+    max-width: 60%;
+    text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+  }
+
+  main > article:nth-of-type(1) > section:nth-of-type(1) > a {
+    top: 63%;
+    font-size: 1.1rem;
+    text-shadow:
+    -2px -2px 4px rgba(0,0,0,0.55),
+    2px -2px 4px rgba(0,0,0,0.55),
+    -2px  2px 4px rgba(0,0,0,0.55),
+    2px  2px 4px rgba(0,0,0,0.55);
+  }
+  /* danny jansen wat minder breeed maken */
+    main > article > section:nth-of-type(2) img {
+    width: 75%;       
+    border-radius: 1rem; 
+    margin: 0 auto;   
+    display: block;
+  }
+  /* populaire recepten en foodartikelen */
+    main > aside:nth-of-type(1) ul,
+    main > aside:nth-of-type(2) ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+@media (min-width: 805px) {
+  /* promo balk */
+body > section:nth-of-type(1) {
+  background-color: #007f86;
+  color: #ffffff;
+  max-width: 100%;
+  margin: 0 auto;
+}
+}
